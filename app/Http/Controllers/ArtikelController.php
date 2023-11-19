@@ -82,30 +82,18 @@ class ArtikelController extends Controller
         $ketegori = new Kategori();
         $data = $ketegori->getKategori();
 
-        
-
         return view('halaman.artikel.show',compact('artikel'))->with('kategori', $data, );
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $artikel = Artikel::findOrFail($id);
-
         $author = new Author();
         $dataauthor = $author->getAuthor();
-
         $kategori = new Kategori();
         $datakategori = $kategori->getKategori();
 
         return view('halaman.artikel.edit', compact('artikel', 'datakategori', 'dataauthor'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
 
     {
@@ -115,10 +103,6 @@ class ArtikelController extends Controller
         return redirect()->route('artikel.index')->with('success', 'Artikel Behasil di Update');
 
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
 
