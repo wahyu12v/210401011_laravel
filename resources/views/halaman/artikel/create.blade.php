@@ -19,7 +19,6 @@
       </select>
       <select class="form-select mb-3" aria-label="Default select example" name="author">
         <option hidden>Pilih Author</option>
-       
             @foreach($dataAuthor as $a)
                 <option value="{{ $a->nama }}">{{ $a->nama }}</option>
             @endforeach 
@@ -49,5 +48,4 @@
       </div>
       <button class="btn btn-dark ">Submit</button>
   </form>
-
 @endsection
