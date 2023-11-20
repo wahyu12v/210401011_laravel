@@ -17,7 +17,7 @@
                     <th style="width: 5%">Nomor</th>
                     <th>Judul artikel</th>
                     <th>Author</th>
-                    <th>kateggori</th>
+                    <th>kategori</th>
                     <th>Action</th>
                 </tr>
             </thead>
