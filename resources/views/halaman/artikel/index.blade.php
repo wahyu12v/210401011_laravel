@@ -17,6 +17,7 @@
                     <th style="width: 5%">Nomor</th>
                     <th>Judul artikel</th>
                     <th>Author</th>
+                    <th>kateggori</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                         <td class="align-middle" style="text-align: center;">{{ $loop->iteration }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $artikel->judul }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $artikel->author}}</td>
+                        <td class="align-middle" style="text-align: center;">{{ $artikel->kategori}}</td>
                         <td class="d-flex justify-content-center">
                             <a href="{{ route('artikel.show', $artikel->id) }}" type="button" class="btn btn-success mx-1">Detail</a>
                             <a href="{{ route('artikel.edit', $artikel->id) }}" type="button" class="btn btn-warning mx-1">Edit</a>

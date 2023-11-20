@@ -33,8 +33,6 @@ class ArtikelController extends Controller
         $ResultAuthor = new Author();
         $dataAuthor = $ResultAuthor->getauthor();
 
-      
-        
         return view('halaman.artikel.create')
         ->with('kategori', $data)
         ->with('dataAuthor', $dataAuthor)
@@ -49,8 +47,6 @@ class ArtikelController extends Controller
 
     {
 
-        
-
         $foto = round(microtime(true) * 1000).'-'.str_replace(' ', '-', $request->file('gambar')->getClientOriginalName());
 
         $data = [
@@ -62,11 +58,8 @@ class ArtikelController extends Controller
             'img'=>$foto,
         ];
 
-
-
         // simpan foto
             $request->file('gambar')->move(public_path('images'), $foto);
-
         Artikel::create($data);
         return redirect()->route('artikel.index')->with('success', 'Artikel Behasil di Tambahkan')->with('kategori', $data);
     }
